@@ -1,17 +1,18 @@
 import React from 'react';
 
-
-type PropsButton = {
+type ButtonType = {
+    onclick: () => void
     name: string
-    onClick: () => void
 }
 
-const Button = (props: PropsButton) => {
-    const onClickHandler = () => props.onClick()
+const Button = (props: ButtonType) => {
 
+    const onClickHendler = () => {
+        props.onclick()
+    }
 
     return (
-        <button onClick={onClickHandler}>{props.name}</button>
+        <button onClick={onClickHendler} >{props.name}</button>
     );
 };
 
